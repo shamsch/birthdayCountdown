@@ -89,8 +89,8 @@ function CountDown() {
         const birthDay = new Date(nextBirthDay());
 
         //this is the math 
-        const differenceInSeconds = (birthDay.getTime() - currentDate.getTime());
-        const days = Math.floor(differenceInSeconds / (3600 * 24 * 1000));
+        const differenceInSeconds = (birthDay.getTime() - currentDate.getTime())/1000;
+        const days = Math.floor(differenceInSeconds / (3600 * 24 ));
         const hours = Math.floor(differenceInSeconds / 3600) % 24;
         const mins = Math.floor(differenceInSeconds / 60) % 60;
         const seconds = Math.floor(differenceInSeconds) % 60;
