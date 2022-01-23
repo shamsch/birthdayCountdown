@@ -91,7 +91,7 @@ function CountDown() {
         //this is the math 
         const differenceInSeconds = (birthDay.getTime() - currentDate.getTime())/1000;
         const days = Math.floor(differenceInSeconds / (3600 * 24 ));
-        const hours = Math.floor(differenceInSeconds / 3600) % 24;
+        const hours = (Math.floor(differenceInSeconds / 3600) % 24)+1;
         const mins = Math.floor(differenceInSeconds / 60) % 60;
         const seconds = Math.floor(differenceInSeconds) % 60;
         //upating it in the HTML doc
