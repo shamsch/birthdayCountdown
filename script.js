@@ -21,7 +21,7 @@ function nextBirthDay() {
     let currentDate = date.getDate();
 
     //birthday is 22 August so this checks whether current year's birthday is yet to occur or has past
-    if (currentDate < 22 && currentMonth <= 8) {
+    if (currentDate < 22 || currentMonth <= 8) {
         dateString = "22 Aug " + currentYear;
         nthBirthDay();
         return (dateString);
@@ -89,12 +89,11 @@ function CountDown() {
         const birthDay = new Date(nextBirthDay());
 
         //this is the math 
-        const differenceInSeconds = (birthDay - currentDate) / 1000;
-        const days = Math.floor(differenceInSeconds / 3600 / 24);
+        const differenceInSeconds = (birthDay.getTime() - currentDate.getTime());
+        const days = Math.floor(differenceInSeconds / (3600 * 24 * 1000));
         const hours = Math.floor(differenceInSeconds / 3600) % 24;
         const mins = Math.floor(differenceInSeconds / 60) % 60;
         const seconds = Math.floor(differenceInSeconds) % 60;
-
         //upating it in the HTML doc
         days_p.innerHTML = days;
         hours_p.innerHTML = hours;
